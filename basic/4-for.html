@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>循环</title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+	</head>
+
+	<body>
+		<div id="app4">
+			<p v-for="todo in todos">
+				{{todo.text}}
+			</p>
+		</div>
+		<script>
+			var app4 = new Vue({
+				el: "#app4",
+				data: {
+					todos: [{
+							text: "学习"
+						},
+						{
+							text: "vue"
+						}
+					]
+				}
+			})
+		</script>
+
+		<div id="app5">
+			<p v-for="todo in todos">
+				{{todo}}
+			</p>
+		</div>
+		<script>
+			var app5 = new Vue({
+				el: "#app5",
+				data: {
+					todos: ["彩瓷学习", "没有vue"]
+				}
+			})
+		</script>
+	</body>
+
+</html>

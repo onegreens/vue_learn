@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>v-on:click</title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+	</head>
+
+	<body>
+		<div id="app5">
+			<p>{{message}}</p>
+			<button v-on:click="reverseMessage">翻转</button>
+		</div>
+		<script>
+			var app5 = new Vue({
+				el: "#app5",
+				data: {
+					message: "今天吃鸡"
+				},
+				methods: {
+					reverseMessage: function() {
+						this.message = this.message.split('').reverse().join("");
+					}
+				}
+			})
+		</script>
+	</body>
+
+</html>

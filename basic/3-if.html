@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>条件</title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+	</head>
+	<div id="app3">
+		<p v-if="seen">现在你看到我了</p>
+	</div>
+	<script>
+		var app3 = new Vue({
+			el: "#app3",
+			data: {
+				seen: true
+			}
+		})
+	</script>
+
+	<body>
+	</body>
+
+</html>

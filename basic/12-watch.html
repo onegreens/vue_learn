@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>监听属性</title>
+    <script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
+    <style>
+    </style>
+</head>
+
+<body>
+    <div id="computed_props">
+        千米 :
+        <input type="text" v-model="kilometers"> 米 :
+        <input type="text" v-model="meters">
+    </div>
+    <p id="info"></p>
+
+    <script>
+        new Vue({
+            el: '#computed_props',
+            data: {
+                kilometers: "",
+                meters: ""
+            },
+            watch: {
+                kilometers: function (val) {
+                    this.kilometers = val;
+                    this.meters = val / 1000;
+                },
+                meters: function (val) {
+                    this.kilometers = 1000 * val;
+                    this.meters = val;
+                }
+            }
+        })
+    </script>
+</body>
+<!--
+ 在两个大括号中 
+{{ message | capitalize }}
+
+在 v-bind 指令中 
+<div v-bind:id="rawId | formatId"></div>
+
+过滤器函数接受表达式的值作为第一个参数。
+-->
+
+</html>
