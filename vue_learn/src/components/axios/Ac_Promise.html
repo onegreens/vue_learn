@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>Document</title>
+</head>
+
+<body>
+  <div>测试</div>
+  <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      console.log("开始");
+      var p1 = new Promise(test);
+      var p2 = p1.then(function (result) {
+        console.log('成功：' + result);
+      });
+      var p3 = p2.catch(function (reason) {
+        console.log('失败：' + reason);
+      });
+    })
+
+    function test(resolve, reject) {
+      //生成一个0-2之间的随机数，如果小于1，则等待一段时间后返回成功，否则返回失败：
+      //这个test()函数有两个参数，这两个参数都是函数，如果执行成功，我们将调用resolve('200 OK')，如果执行失败，我们将调用reject('timeout in ' + timeOut + ' seconds.')
+      var timeOut = Math.random() * 2;
+      console.log('set timeout to: ' + timeOut + ' seconds.');
+      setTimeout(function () {
+        if (timeOut <
+          1) {
+          console.log('call resolve()...');
+          resolve('200 OK');
+        } else {
+          console.log('call reject()...');
+          reject('timeout in ' + timeOut +
+            ' seconds.');
+        }
+      }, timeOut * 1000);
+    }
+
+  </script>
+</body>
+
+</html>
