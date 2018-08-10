@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>绑定 HTML Class</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+        .active {
+            color: red
+        }
+
+        .text-danger {
+            font-size: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>对象语法</div>
+    <div id="app" v-bind:class="{ active: isActive, 'text-danger': hasError }">
+        {{message}}
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                isActive: true,
+                hasError: true,
+                message: 'Hello Vue!'
+            }
+        })
+    </script>
+</body>
+
+</html>
