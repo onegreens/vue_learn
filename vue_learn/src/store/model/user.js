@@ -17,15 +17,19 @@ const user = {
       commit,
       state
     }, nickname) {
-      return new Promise((resolve, reject) => {
+      return new Promise((resolve1, reject1) => {
         if (nickname) {
           console.info("user接收到:" + nickname);
           commit('setNickName', nickname);
           console.info("user修改完成:" + state.nickname);
-          resolve("成功");
+          reject1("失败");
+          resolve1("成功");
+          
 
         } else {
-          reject("失败");
+
+          resolve1("成功");
+          reject1("失败");
         }
       })
     }

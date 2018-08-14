@@ -5,6 +5,7 @@ import Hello from "@/components/Hello";
 import Aa_getAndPost from "../components/axios/Aa_getAndPost";
 import Ab_all from "../components/axios/Ab_all";
 import sample from "../components/vuex/sample";
+import iot from "../components/work/iot";
 
 
 Vue.use(Router);
@@ -38,6 +39,12 @@ export default new Router({
       path: "/Ab_all",
       name: "Ab_all",
       component: Ab_all
+    }, {
+      path: "/iot",
+      name: "iot",
+      component: iot
     }
+
+
   ]
 });

@@ -22,7 +22,7 @@ export default {
             var that = this;
             this.$store
                 .dispatch("changeNickName", "没有名字")
-                .then(res => {
+                .catch(res => {
                     console.log(
                         "返回数据" +
                             that.$store.state.user.nickname +
@@ -30,7 +30,7 @@ export default {
                             res
                     );
                 })
-                .catch(e => {
+                .then(e => {
                     console.log("返回失败：" + e);
                 });
         }
